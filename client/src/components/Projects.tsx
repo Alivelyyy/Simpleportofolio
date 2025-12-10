@@ -17,6 +17,13 @@ const projects = [
     image: "https://media.discordapp.net/attachments/1417738377977008260/1441682558625779722/image.png?ex=6922af03&is=69215d83&hm=671f02a1037c34306b5252de55cbcb51fc6733c19f92a57c70c9b06f835fdef1&=&format=webp&quality=lossless&width=550&height=264",
     github: "https://github.com/teamapexofc/ApeX-Music",
     demo: "https://apexmusic.netlify.app/"
+  },
+  {
+    title: "Mimi Website",
+    category: "Discord Bot Static Website",
+    image: "https://images-ext-1.discordapp.net/external/MDM4EaWCcYTSnXaF2TAGqWr1tpDob_2Ic1Hy55EV9bg/https/mimi.encorebot.me/opengraph.jpg?format=webp&quality=lossless&width=1543&height=738",
+    github: "https://github.com/aliveyyy/",
+    demo: "https://mimi.encorebot.me"
   }
 ];
 
