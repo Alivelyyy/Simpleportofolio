@@ -24,6 +24,13 @@ const projects = [
     image: "https://images-ext-1.discordapp.net/external/MDM4EaWCcYTSnXaF2TAGqWr1tpDob_2Ic1Hy55EV9bg/https/mimi.encorebot.me/opengraph.jpg?format=webp&quality=lossless&width=1543&height=738",
     github: "https://github.com/aliveyyy/",
     demo: "https://mimi.encorebot.me"
+  },
+  {
+    title: "Encore Website",
+    category: "Discord Bot Static Website",
+    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707706949-orgfk.png",
+    github: "https://github.com/aliveyyy/",
+    demo: "https://mimi.encorebot.me"
   }
 ];
 
