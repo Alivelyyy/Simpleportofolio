@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
-import { Menu, X, Github, Disc } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/config";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [location, setLocation] = useLocation();
+  const { personal, navigation } = siteConfig;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,15 +17,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
     
@@ -43,21 +35,19 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <a 
             href="#home" 
             onClick={(e) => scrollToSection(e, "#home")}
             className="flex items-center gap-2"
           >
-            <img src="https://images-ext-1.discordapp.net/external/62Z18IyUDPSKmuFm9DE3JuZDsZ3NBa-bssyYt_TdCQE/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1304080189029875753/16b589870dec30e251c493faad39af8f.webp?format=webp" alt="Alive" className="h-8 w-8" />
+            <img src={personal.avatar} alt={personal.name} className="h-8 w-8" />
             <span className="text-xl font-bold font-heading tracking-tight">
-              Alive
+              {personal.name}
             </span>
           </a>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navigation.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -72,7 +62,6 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -84,7 +73,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -94,7 +82,7 @@ export default function Navbar() {
             className="md:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
+              {navigation.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}

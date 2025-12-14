@@ -1,98 +1,94 @@
 import { motion } from "framer-motion";
-import { Code2, Database, Layout, Terminal, Server, Wrench, Zap, Trophy, Users, Coffee } from "lucide-react";
+import { Code2, Database, Layout, Terminal, Server, Wrench, Trophy, Users, Coffee, Zap } from "lucide-react";
+import { siteConfig, Skill } from "@/lib/config";
 
-const skills = [
-  { name: "JavaScript", icon: <Code2 className="w-5 h-5" />, color: "from-yellow-500 to-orange-500", level: 95 },
-  { name: "Node.js", icon: <Server className="w-5 h-5" />, color: "from-green-500 to-emerald-500", level: 90 },
-  { name: "Discord.js", icon: <Terminal className="w-5 h-5" />, color: "from-blue-500 to-indigo-500", level: 95 },
-  { name: "MongoDB", icon: <Database className="w-5 h-5" />, color: "from-green-400 to-teal-500", level: 85 },
-  { name: "API Integration", icon: <Wrench className="w-5 h-5" />, color: "from-purple-500 to-pink-500", level: 88 },
-  { name: "React/UI", icon: <Layout className="w-5 h-5" />, color: "from-cyan-400 to-blue-500", level: 82 },
-];
+const skillIconMap: Record<string, React.ReactNode> = {
+  "JavaScript": <Code2 className="w-5 h-5" />,
+  "Node.js": <Server className="w-5 h-5" />,
+  "Discord.js": <Terminal className="w-5 h-5" />,
+  "MongoDB": <Database className="w-5 h-5" />,
+  "API Integration": <Wrench className="w-5 h-5" />,
+  "React/UI": <Layout className="w-5 h-5" />,
+};
 
-const stats = [
-  { icon: <Trophy className="w-6 h-6" />, value: "3+", label: "Years Experience" },
-  { icon: <Zap className="w-6 h-6" />, value: "50+", label: "Projects Done" },
-  { icon: <Users className="w-6 h-6" />, value: "1000+", label: "Happy Users" },
-  { icon: <Coffee className="w-6 h-6" />, value: "999+", label: "Cups of Coffee" },
-];
+const statIconMap: Record<string, React.ReactNode> = {
+  "Years Experience": <Trophy className="w-6 h-6" />,
+  "Projects Done": <Zap className="w-6 h-6" />,
+  "Happy Users": <Users className="w-6 h-6" />,
+  "Cups of Coffee": <Coffee className="w-6 h-6" />,
+};
 
 export default function About() {
+  const { personal, about, skills, stats } = siteConfig;
+
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+    <section id="about" className="py-32 relative overflow-hidden section-glow">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
       
-      {/* Decorative Grid */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
+      <div className="absolute inset-0 opacity-[0.015]" style={{
         backgroundImage: `linear-gradient(90deg, white 1px, transparent 1px), linear-gradient(180deg, white 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
+        backgroundSize: '80px 80px'
       }} />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-block text-primary font-mono text-sm mb-4 tracking-wider">// WHO I AM</span>
+          <span className="inline-flex items-center gap-2 text-primary font-mono text-sm mb-4 tracking-wider justify-center">
+            <span className="w-8 h-px bg-gradient-to-r from-transparent to-primary" />
+            WHO I AM
+            <span className="w-8 h-px bg-gradient-to-l from-transparent to-primary" />
+          </span>
           <h2 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500">Me</span>
+            About <span className="text-gradient">Me</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-white/40 text-lg max-w-2xl mx-auto leading-relaxed">
             Passionate developer crafting digital experiences that make a difference
           </p>
         </motion.div>
 
-        {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
           
-          {/* Left Column - About Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="space-y-8"
           >
-            {/* Profile Card */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity" />
-              <div className="relative bg-card/80 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
-                <div className="flex items-start gap-6 mb-6">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-pink-500 to-violet-600 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+              <div className="relative glass-card rounded-3xl p-8">
+                <div className="flex items-start gap-6 mb-8">
                   <div className="relative">
-                    <div className="w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-primary/50 ring-offset-2 ring-offset-background">
+                    <div className="w-20 h-20 rounded-2xl overflow-hidden ring-2 ring-primary/30 ring-offset-4 ring-offset-background">
                       <img 
-                        src="https://images-ext-1.discordapp.net/external/62Z18IyUDPSKmuFm9DE3JuZDsZ3NBa-bssyYt_TdCQE/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1304080189029875753/16b589870dec30e251c493faad39af8f.webp?format=webp" 
-                        alt="Alive"
+                        src={personal.avatar} 
+                        alt={personal.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-background" />
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-background shadow-lg shadow-emerald-500/50" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">Alive</h3>
-                    <p className="text-primary font-medium">Full Stack Developer</p>
-                    <p className="text-muted-foreground text-sm">CEO @ ApeX Development</p>
+                    <h3 className="text-2xl font-bold text-white mb-1">{personal.name}</h3>
+                    <p className="text-primary font-medium">{personal.title}</p>
+                    <p className="text-white/40 text-sm mt-1">{personal.role} @ {personal.company}</p>
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  I am a passionate Developer with a strong focus on Discord bot development and backend automation. 
-                  I create custom solutions that help communities manage their servers efficiently and provide unique experiences for their members.
-                </p>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  With expertise in the Discord.js library and Node.js ecosystem, I can bring any idea to life—from complex economy systems to advanced moderation tools.
-                </p>
+                {about.bio.map((paragraph, index) => (
+                  <p key={index} className="text-white/50 leading-relaxed mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
@@ -100,72 +96,70 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-card/50 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-primary/50 transition-all group"
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="glass-card-hover rounded-2xl p-5 group"
                 >
-                  <div className="text-primary mb-3 group-hover:scale-110 transition-transform">
-                    {stat.icon}
+                  <div className="text-primary mb-3 group-hover:scale-110 transition-transform duration-300">
+                    {statIconMap[stat.label] || <Zap className="w-6 h-6" />}
                   </div>
-                  <span className="block text-3xl font-bold text-white mb-1">{stat.value}</span>
-                  <span className="text-sm text-muted-foreground">{stat.label}</span>
+                  <span className="block text-3xl font-bold text-white mb-1 group-hover:text-gradient transition-all">{stat.value}</span>
+                  <span className="text-sm text-white/40">{stat.label}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right Column - Skills */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="space-y-6"
           >
             <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
-              <div className="w-8 h-px bg-primary" />
+              <div className="w-10 h-0.5 bg-gradient-to-r from-primary to-violet-500 rounded-full" />
               Technical Skills
             </h3>
             
-            {skills.map((skill, index) => (
+            {skills.map((skill: Skill, index: number) => (
               <motion.div
                 key={skill.name}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-3">
-                    <div className={`p-2.5 rounded-lg bg-gradient-to-br ${skill.color} text-white shadow-lg`}>
-                      {skill.icon}
+                    <div className={`p-2.5 rounded-xl bg-gradient-to-br ${skill.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {skillIconMap[skill.name] || <Code2 className="w-5 h-5" />}
                     </div>
                     <span className="font-medium text-white">{skill.name}</span>
                   </div>
-                  <span className="text-sm font-mono text-muted-foreground">{skill.level}%</span>
+                  <span className="text-sm font-mono text-white/40">{skill.level}%</span>
                 </div>
-                <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                   <motion.div
                     className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
+                    transition={{ duration: 1.2, delay: 0.3 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 animate-shimmer" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 animate-shimmer" />
                   </motion.div>
                 </div>
               </motion.div>
             ))}
 
-            {/* Technologies Tags */}
-            <div className="pt-8 mt-8 border-t border-white/10">
-              <h4 className="text-sm text-muted-foreground mb-4">Also experienced with:</h4>
+            <div className="pt-8 mt-8 border-t border-white/5">
+              <h4 className="text-sm text-white/40 mb-4">Also experienced with:</h4>
               <div className="flex flex-wrap gap-2">
-                {['TypeScript', 'Express.js', 'PostgreSQL', 'Redis', 'Docker', 'Git', 'REST APIs', 'WebSockets'].map((tech) => (
+                {about.otherTechnologies.map((tech) => (
                   <span 
                     key={tech}
-                    className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm text-muted-foreground hover:text-white hover:border-primary/50 transition-colors cursor-default"
+                    className="px-3 py-1.5 glass-card rounded-xl text-sm text-white/50 hover:text-white hover:border-primary/30 transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </span>
