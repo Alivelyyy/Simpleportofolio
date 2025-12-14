@@ -7,14 +7,14 @@ const projects = [
   {
     title: "Alive Portfolio",
     category: "Personal Brand",
-    image: "https://media.discordapp.net/attachments/1417738377977008260/1441682182841040926/image.png?ex=6922aea9&is=69215d29&hm=f799aeade3fef25aa34012aa2eec70a7f074c1177749de0f87f523a04f5d569b&=&format=webp&quality=lossless&width=1543&height=738",
+    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707701160-sdfsdfsdff.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0058ec8f1420c430000000002%2F20251214%2Fus-east-005%2Fs3%2Faws4_request&X-Amz-Date=20251214T102141Z&X-Amz-Expires=604800&X-Amz-Signature=9282c64ea74a6058200fae3eed7ac7558c98a22cd21e3b18d37beac9b3bd0417&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
     github: "https://github.com/teamapexofc/Simpleportofolio",
     demo: "https://Alive.encorebot.me"
   },
   {
     title: "ApeX Music",
     category: "Discord Bot",
-    image: "https://media.discordapp.net/attachments/1417738377977008260/1441682558625779722/image.png?ex=6922af03&is=69215d83&hm=671f02a1037c34306b5252de55cbcb51fc6733c19f92a57c70c9b06f835fdef1&=&format=webp&quality=lossless&width=550&height=264",
+    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707702718-tgbgyh.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0058ec8f1420c430000000002%2F20251214%2Fus-east-005%2Fs3%2Faws4_request&X-Amz-Date=20251214T102142Z&X-Amz-Expires=604800&X-Amz-Signature=5bb9dc53bfbed81483014f14f552006705a0afd37643c50b967215ae5b92bd6f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
     github: "https://github.com/teamapexofc/ApeX-Music",
     demo: "https://apexmusic.netlify.app/"
   },
@@ -28,9 +28,16 @@ const projects = [
   {
     title: "Encore Website",
     category: "Discord Bot Static Website",
-    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707706949-orgfk.png",
+    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707706949-orgfk.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0058ec8f1420c430000000002%2F20251214%2Fus-east-005%2Fs3%2Faws4_request&X-Amz-Date=20251214T102147Z&X-Amz-Expires=604800&X-Amz-Signature=cb71fdef3100fd0c895b30b81ae504a5a5e0630da3c7b2b2e9f549164e3a9617&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
     github: "https://github.com/aliveyyy/",
-    demo: "https://mimi.encorebot.me"
+    demo: "https://www.encorebot.me"
+  },
+  {
+    title: "Media Vault",
+    category: "Media Hosting",
+    image: "https://s3.us-east-005.backblazeb2.com/Mediavaultbyalive/uploads/1765707697089-rgrfgv.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=0058ec8f1420c430000000002%2F20251214%2Fus-east-005%2Fs3%2Faws4_request&X-Amz-Date=20251214T102137Z&X-Amz-Expires=604800&X-Amz-Signature=4c42a05b5ce2aab4b151a14bea88a0a490a002e24b00d8adc62304f128ff0463&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+    github: "https://github.com/aliveyyy/",
+    demo: "https://mediavault.encorebot.me"
   }
 ];
 
